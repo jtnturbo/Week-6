@@ -1,0 +1,59 @@
+// Lab 4 and basically Lab 5 is implemented here in this modified guess a number game using GUI
+
+
+
+import javax.swing.JOptionPane;
+
+public class Lab4 
+{
+	public static void main( String[] args )
+	{
+		int compNum;
+		String input;
+		
+		compNum = 1 + (int)( Math.random() * 10);
+		
+		for( int round = 1; round < 11; round++)
+		{
+			
+			
+			input =
+					JOptionPane.showInputDialog( "Guess a number between 1 & 10: " );
+			
+			int guess = Integer.parseInt( input );
+		
+			if( guess <= 10)
+			{
+
+				if ( guess > compNum )
+				{
+					String tooHigh = 
+							String.format( "Your guess was too high" );
+					JOptionPane.showMessageDialog( null, tooHigh);
+				}
+			
+				if( guess < compNum )
+				{
+					String toolow =
+							String.format( "Your guess was too low" );
+					JOptionPane.showMessageDialog(null, toolow);
+				}
+			
+				else if( guess == compNum )
+				{
+					round = 11;
+					String correct =
+							String.format( "Your guess was correct " );
+					JOptionPane.showMessageDialog( null, correct );
+				}
+			}
+		}
+		 
+	}
+
+	private static String parseInt() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
